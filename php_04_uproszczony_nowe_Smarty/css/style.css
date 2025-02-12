@@ -1,0 +1,66 @@
+body {
+  width: 90%;
+  margin: 2em auto;
+  background-color: rgb(161, 191, 126);
+}
+
+.header,
+.footer,
+.content {
+  margin: 1em auto;
+  border: 0.01em solid #5e976a;
+  border-radius: 1em;
+  padding: 1em;
+  background: #c1d3a4;
+  box-shadow: 0.2em 0.2em 0.4em #95ab85;
+}
+
+.header,
+.footer {
+  text-align: center;
+}
+
+.messages {
+  margin: 1em auto;
+}
+
+.err,
+.inf,
+.res {
+  padding: 1em 1em 1em 3em;
+  border-radius: 1em;
+  color: #222;
+}
+
+.err {
+  background-color: #f88;
+}
+.inf {
+  background-color: #8f8;
+}
+.res {
+  background-color: #ff0;
+}
+
+.stopka {
+  font-size: 200%;
+  color: red;
+}
+.stopka:hover {
+  color: #fff;
+}
+
+.page_title {
+  color: red;
+  font-size: 300%;
+}
+.page_title:hover {
+  color: #fff;
+}
+
+.ich_bin {
+  color: blueviolet;
+}
+.ich_bin:hover {
+  color: violet;
+}

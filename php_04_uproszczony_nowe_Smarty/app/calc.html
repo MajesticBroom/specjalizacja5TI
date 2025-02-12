@@ -1,0 +1,67 @@
+{extends file="../templates/main.html"}
+
+{block name=footer}
+  <a href="https://media.tenor.com/WP2NxV9cUYUAAAAe/shelf.png" class="stopka">Zapraszamy na Facebooka!</a>
+{/block}
+
+{block name=content}
+
+<h3>Przelicz żądaną kwotę</h2>
+
+
+<form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post">
+	<fieldset>
+		<label for="kurs">Kurs:</label>
+		<input id="kurs" type="number" name="kurs" value="{$form['kurs']}" step="0.1">
+		<label for="przewalutowanie">Przewalutowanie</label>
+		<select id="przewalutowanie" name="przewalutowanie">
+			<option value="1">EUR => PLN</option>
+			<option value="2">PLN => EUR</option>
+		</select>
+					
+		<label for="kwota">Kwota:</label>
+		<input id="kwota" type="number" name="kwota" value="{$form['kwota']}" step="0.1">
+	</fieldset>
+	<button type="submit" class="pure-button pure-button-primary">Przelicz</button>
+</form>
+
+<div class="messages">
+
+{* wyświeltenie listy błędów, jeśli istnieją *}
+{if isset($messages)}
+	{if count($messages) > 0} 
+		<h4>Wystąpiły błędy: </h4>
+		<ol class="err">
+		{foreach  $messages as $msg}
+		{strip}
+			<li>{$msg}</li>
+		{/strip}
+		{/foreach}
+		</ol>
+	{/if}
+{/if}
+
+{* wyświeltenie listy informacji, jeśli istnieją *}
+{if isset($infos)}
+	{if count($infos) > 0} 
+		<h4>Informacje:</h4>
+		<ol class="inf">
+		{foreach  $infos as $msg}
+		{strip}
+			<li>{$msg}</li>
+		{/strip}
+		{/foreach}
+		</ol>
+	{/if}
+{/if}
+
+{if isset($result)}
+	<h4>Przeliczona kwota:</h4>
+	<p class="res">
+	{$result}
+	</p>
+{/if}
+
+</div>
+
+{/block}
